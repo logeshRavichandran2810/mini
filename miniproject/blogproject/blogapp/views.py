@@ -10,7 +10,7 @@ def home(request):
     return render(request,"blogapp/index.html",{"blogger":bloggers,"post":posts})
 
 
-def register(request):
+def post(request):
     return render(request,"blogapp/register.html")
 
 
