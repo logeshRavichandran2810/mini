@@ -19,19 +19,12 @@
   
           <h2 style="color: brown;">All Post</h2>
           <div class="container contpost" style="background-color: aqua; display: grid;grid-template-columns: auto auto auto;gap: 30px 10px;">
-          {%for posts in post%}
-          <div class="container">
-            <div class="card" style="height: 310px;width: 300px;">
-              <img src="{{posts.image.url}}" class="card-img-top" alt="img1">
-              <div class="card-body">
-                <h5 class="card-title">{{posts.title}}</h5>
-                <h5 class="card-title">Content : {{posts.content}}</h5>
-                <h5 class="card-text">Description : {{posts.description}}</h5>        
-              </div>
-            </div>
-           </div>
-           {%endfor%}
+  
+          {%for pst in post%}
+          {% include 'blogapp/includes/post.html' %}
+          {%endfor%}
           <br>
+  
         </div>
         </div>
       </section>
