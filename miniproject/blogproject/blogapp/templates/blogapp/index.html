@@ -1,0 +1,68 @@
+{%extends 'blogapp/layouts/main.html'%}
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    {%block titlepage%}
+    Home
+    {%endblock titlepage%}
+    {%block csspage%}
+    <link rel="stylesheet" href="{%static 'blogapp/index.css'%}">
+    {%endblock csspage%}
+  </head>
+  <body >
+    {%block content%}
+    <section>
+    <div class="container" style="margin-top: 70px;">
+      <div class="row">
+        <div class="col-12">
+          <div>
+            Learn from the Past | Live in the Present | Mark the Future 
+          </div>
+          <h1 style="color: greenyellow;">welcome : Happy Blogging</h1>
+         </div>
+      </div>
+    </div>
+    </section>
+    <div>
+    <div class="container">
+    <marquee behavior="alternate" scrollamount="15">
+      {%for i in post%}
+      <img height="200px" width="300px" src="{{i.image.url}}" alt="images">
+      {%endfor%}
+    </marquee>
+  </div>
+  </div>
+    <section>
+      <div class="container" style="background-color: aqua;">
+        <h2 style="color: brown;">About</h2>
+        <h4>
+          Welcome to our Blog , A vibrant space where ideas, stories, and inspiration come together. Our blog site is designed to provide a platform for sharing knowledge, insights, and creativity with the world. Whether you're here to explore new perspectives, dive into engaging content, or simply enjoy reading, you're in the right place.
+        </h4><br>
+ 
+      </div>
+    </section><br>
+    <section class="allpost" >
+      <div class="container" style="background-color: aqua;">
+
+        <h2 style="color: brown;">All Post</h2>
+        <div class="container contpost" style="background-color: aqua; display: grid;grid-template-columns: auto auto auto;gap: 30px 10px; overflow:hidden">
+
+        {%for pst in post%}
+        {% include 'blogapp/includes/post.html' %}
+        {%endfor%}
+        <br>
+
+      </div>
+      </div>
+    </section>
+    <br>
+    
+    {%endblock content%}
+
+    
+  </body>
+</html>

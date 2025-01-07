@@ -1,0 +1,37 @@
+{%extends 'blogapp/layouts/main.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+    <section>
+        <div class="container" style="margin-top: 70px;">
+          <div class="row">
+            <div class="col-12">
+              <div>
+                Learn from the Past | Live in the Present | Mark the Future 
+              </div>
+              <h1 style="color: violet;">Welcome  </h1>
+             </div>
+          </div>
+        </div>
+        </section>
+    <div class="container" style="background-color: aqua;border:2px solid black">
+
+    <h2 style="text-align:center;">Add Post</h2>
+    <form action="{%url 'PostViewList'%}" method="POST" enctype="multipart/form-data" style="border:2px solid black;width:750px;margin:auto;padding:5px;background-color:lightgreen" >
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    </div>
+    {%endblock content%}
+
+</body>
+</html>
